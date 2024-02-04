@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bosh sahifa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <br>
+    <h1>Shifokorlar haqida ma'lumotlar</h1>
+    <br><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">T/R</th>
+                <th scope="col">Ism, familiya, sharif</th>
+                <th scope="col">Mutaxassisligi</th>
+                <th scope="col">Telefon raqami</th>
+                <th scope="col">Jinsi</th>
+                <th scope="col">Qabul narxi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+            <tr>
+                <th scope="row">{{ doctor.id }}</th>
+                <td>{{ doctor.full_name }}</td>
+                <td>{{ doctor.specialty }}</td>
+                <td>{{ doctor.phone_number }}</td>
+                <td>{{ doctor.gender }}</td>
+                <td>{{ doctor.price }} so'm</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-grid gap-2 d-md-block" style="text-align: right;">
+        <a href="{% url 'admin_panel' %}">
+            <button class="btn btn-primary btn-lg" type="button">Bosh sahifaga</button>
+        </a>
+         <a href="{% url 'signupUser' %}">
+        <button class="btn btn-primary btn-lg" type="button">Qabul belgilash</button>
+         </a>
+    </div>
+</body>
+</html>

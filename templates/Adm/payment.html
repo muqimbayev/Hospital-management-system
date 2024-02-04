@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To'lov Cheki</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS styling */
+        .container {
+            margin-top: 50px;
+        }
+        .info-box {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .info-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="{% url 'payment' %}">
+    {% csrf_token %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="info-box">
+                    <h2 class="text-center mb-4">To'lov Cheki</h2>
+                    <div class="form-group">
+
+                         <label for="full_name"  class="info-label">To'lov qiluvchi ism familyasi:</label></br>
+                      <input type="text" id="full_name" class="form-control" name="full_name" value="{{ full_name }}" readonly>
+
+                    </div>
+                    <div class="form-group">
+
+                         <label for="price"  class="info-label">To'lov summasi:</label></br>
+                      <input type="number" id="price" class="form-control" name="price" value="{{ price }}" readonly>
+
+                    </div>
+                    <div class="form-group">
+
+                        <label for="check_number"  class="info-label">To'lov raqami:</label></br>
+                        <input type="text" id="check_number"class="form-control" name="check_number" value="{{ check_number }}"  readonly>
+
+                    </div>
+
+                    <div class="form-group">
+
+                         <label for="doctor"  class="info-label">Doktor ism familyasi:</label></br>
+                      <input type="text" id="doctor" class="form-control" name="doctor" value="{{ doctor }}" readonly><br><br>
+
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="naqd_radio" name="payment_method" value="naqd">
+                            <label class="custom-control-label radio-label" for="naqd_radio">Naqd to'lov</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="karta_radio" name="payment_method" value="karta">
+                            <label class="custom-control-label radio-label" for="karta_radio">Karta orqali to'lov</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tasdiqlash</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

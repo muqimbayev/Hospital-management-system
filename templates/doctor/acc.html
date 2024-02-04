@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bemor Ma'lumotlari</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<form method="post" action="{% url 'doctor_submit' %}">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row mt-6">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center">Qabul</h1>
+            </div>
+        </div>
+        <div class="row mt-6">
+            <div class="col-md-6">
+                <h2>Bemor haqida ma'lumotlar</h2>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>Ism familya</th>
+
+                            <td>{{ data.full_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Tug'ilgan yili</th>
+                            <td>{{ data.date_birth }}</td>
+                        </tr>
+                        <tr>
+                            <th>Telefon raqami</th>
+                            <td>{{ data.phone_number }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <h2>Umumiy kasalliklar tarixi</h2>
+                    <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Shikoyat</th>
+                    <th scope="col">Tashxis</th>
+                    <th scope="col">Sana</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in history %}
+                <tr>
+                    <td>{{ h.appeal }}</td>
+                    <td>{{ h.diagnosis }}</td>
+                    <td>{{ h.date}}</td>
+
+                    <td>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="shikoyatlar"><h2>Bemor Shikoyati:</h2></label>
+                <textarea class="form-control" id="shikoyatlar" rows="6" name="shikoyatlar"></textarea>
+
+                <label for="tashxis"><h2>Bemor Tashxisi:</h2></label>
+                <textarea class="form-control" id="tashxis" rows="6" name="tashxis"></textarea>
+            </div>
+        </div>
+
+      <div class="row mt-60">
+    <button type="submit" class="btn btn-primary btn-lg">Tasdiqlash</button>
+</div>
+
+    </div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</form>
+
+</body>
+</html>
