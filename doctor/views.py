@@ -4,6 +4,7 @@ from django.views import View
 from .forms import Doctorforms
 from django.views.generic import TemplateView
 from datetime import date
+from django.contrib.auth.hashers import check_password
 
 
 def LoginDoctor(request):
@@ -11,15 +12,17 @@ def LoginDoctor(request):
         phone_number1 = request.POST.get('phone_number1')
         request.session['phone_number1'] = phone_number1
         password = request.POST.get('password1')
+
         try:
             doctor = Doctor.objects.get(phone_number=phone_number1)
-            if doctor.password == password:
+            if check_password(password, doctor.password):
                 return redirect('main')
+            else:
+                return render(request, 'doctor/login_doctor.html', {'error_message': 'Noto‘g‘ri parol'})
         except Doctor.DoesNotExist:
             return render(request, 'doctor/login_doctor.html', {'error_message': 'Foydalanuvchi topilmadi'})
+
     return render(request, 'doctor/login_doctor.html')
-
-
 def MainDoctor(request):
     phone_number = request.session.get('phone_number1')
     if phone_number:

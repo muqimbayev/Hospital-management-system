@@ -7,7 +7,7 @@ from django.http import HttpRequest
 from .forms import UserProfileForm
 from .models import Doctor, Admissions, Financial
 from django.http import HttpResponse
-
+from django.contrib.auth.hashers import check_password
 
 class HomePages(TemplateView):
     template_name = 'home.html'
@@ -17,15 +17,15 @@ def Admin_login(request):
     if request.method == 'POST':
         phone_number = request.POST.get('phone_number')
         password = request.POST.get('password')
+
         try:
-            user = Admin.objects.get(phone_number=phone_number)
-            if user.password == password:
-                if user is not None:
-                    return redirect('admin_panel')
+            admin = Admin.objects.get(phone_number=phone_number)
+            if check_password(password, admin.password):
+                return redirect('admin_panel')
         except Admin.DoesNotExist:
             return render(request, 'Adm/login.html', {'error_message': 'Foydalanuvchi topilmadi'})
-    return render(request, 'Adm/login.html')
 
+    return render(request, 'Adm/login.html')
 
 class Admin_panel(TemplateView):
     template_name = 'Adm/main.html'

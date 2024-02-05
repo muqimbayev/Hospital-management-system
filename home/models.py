@@ -1,5 +1,6 @@
 from django.db import models
 # Create your models here.
+from django.contrib.auth.hashers import make_password
 
 class Admin(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -12,6 +13,11 @@ class Admin(models.Model):
     def __str__(self):
         return self.full_name
 
+    def save(self, *args, **kwargs):
+        if self.password:
+            self.password = make_password(self.password)
+        super(Admin, self).save(*args, **kwargs)
+
 
 class Accountant(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -23,6 +29,11 @@ class Accountant(models.Model):
     def __str__(self):
         return self.full_name
 
+    def save(self, *args, **kwargs):
+        if self.password:
+            self.password = make_password(self.password)
+        super(Accountant, self).save(*args, **kwargs)
+
 
 class Doctor(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -30,9 +41,14 @@ class Doctor(models.Model):
     specialty = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=50)
     date_birth = models.DateField()
-    password = models.CharField(max_length=128)
+    password = models.CharField(max_length=128)  # Parolni hashlab saqlash uchun xotira
     price = models.IntegerField()
     gender = models.CharField(max_length=30)
+
+    def save(self, *args, **kwargs):
+        if self.password:
+            self.password = make_password(self.password)
+        super(Doctor, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.full_name + ', ' + self.specialty

@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79e623bc-ebe0-4313-82d2-bc3c17d2a215" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/accoutant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accoutant/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accoutant/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/doctor/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/doctor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/0002_alter_financial_doctor_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/0003_alter_financial_price.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/0004_alter_financial_check_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/0005_admissions_accepted.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/0006_alter_history_doctor_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/0007_alter_history_doctor_id_alter_history_user_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/0008_alter_history_doctor_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/doctor/login_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor/login_doctor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accoutant.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accoutant/accoutant.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -56,6 +50,11 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/pcmci-tech/Desktop/Hospital/hm_system&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/accoutant" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
