@@ -55,6 +55,7 @@ class Admissions(models.Model):
 class History(models.Model):
     id = models.BigAutoField(primary_key=True)
     user_id = models.IntegerField()
+    user_phone_number = models.CharField(max_length=15)
     date = models.DateTimeField(auto_now_add=True)
     doctor_id = models.IntegerField()
     appeal = models.TextField()

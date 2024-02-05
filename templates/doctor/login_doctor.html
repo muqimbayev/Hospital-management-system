@@ -14,17 +14,17 @@
     <div class="loginBox">
         <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
         <h3>Sign in for Doctor</h3>
-        <form method="post" action="">
             <div class="inputBox">
                 <label for="phone_number1">Telefon raqam:</label> <br>
                 <input type="text" id="phone_number1" name="phone_number1"> <br>
                 <label for="password1">Parol:</label><br>
                 <input type="password" id="password1" name="password1"> <br>
             </div>
+            <a href="{% url 'main' %}">
             <input class="btn btn-primary" type="submit" value="Login">
+                </a>
         </form>
     </div>
-    </form>
 </body>
 {% endblock context %}
 
