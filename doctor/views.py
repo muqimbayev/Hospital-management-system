@@ -17,9 +17,9 @@ def LoginDoctor(request):
             if check_password(password, doctor.password):
                 return redirect('main')
             else:
-                return render(request, 'doctor/login_doctor.html', {'error_message': 'Noto‘g‘ri parol'})
+                return render(request, 'doctor/login_doctor.html')
         except Doctor.DoesNotExist:
-            return render(request, 'doctor/login_doctor.html', {'error_message': 'Foydalanuvchi topilmadi'})
+            return render(request, 'doctor/login_doctor.html')
 
     return render(request, 'doctor/login_doctor.html')
 def MainDoctor(request):
