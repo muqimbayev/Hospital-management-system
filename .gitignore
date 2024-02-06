@@ -1,1 +1,4 @@
-.config/env
+# .gitignore fayliga kerakli yo'l yoziladi
+__pycache__/
+.env
+*.pyc
