@@ -8,6 +8,9 @@ django = "*"
 django-environ = "*"
 python-dotenv = "*"
 environs = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
+gunicorn = "*"
 
 [dev-packages]
 

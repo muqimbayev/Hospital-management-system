@@ -1,4 +1,3 @@
-# .gitignore fayliga kerakli yo'l yoziladi
-__pycache__/
+db.sqlite3
+__pycashe__
 .env
-*.pyc
