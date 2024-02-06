@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "4.2.9"
 django-environ = "*"
 python-dotenv = "*"
 environs = "*"
@@ -15,4 +15,4 @@ gunicorn = "*"
 [dev-packages]
 
 [requires]
-python_version = "3.12"
+python_version = "3.9.1"
