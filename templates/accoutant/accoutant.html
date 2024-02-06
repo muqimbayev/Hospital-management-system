@@ -1,19 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bosh sahifa</title>
+    <title>Moliyaviy ma'lumotlar</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+
 <form method="post" action="{% url 'accoutant' %}">
-    <br>
+        {% csrf_token %}
+    </br>
+
+    <a href="{% url 'logout' %}" style="float: right;">
+    <button class="btn btn-primary" type="submit">Logout</button>
+</a>
+
+    </br>
+
+</a>
 
     <h1>To'lovlar haqida ma'lumotlar</h1>
     <br><br>
@@ -29,7 +39,6 @@
                 <th scope="col">to'lov raqami</th>
                 <th scope="col">Telefon raqam</th>
 
-
             </tr>
         </thead>
         <tbody>
@@ -39,15 +48,13 @@
                 <th> {{ c.id }}</th>
                 <td>{{ c.full_name }}</td>
                 <td>{{ c.doctor_name }}</td>
-                <td>{{ c.price }}</td>
+                <td>{{ c.price }}  so'm</td>
                 <td>{{ c.date }}</td>
                 <td>{{ c.payment_type }}</td>
                 <td>{{ c.check_number }}</td>
                 <td>{{ c.phone_number }}</td>
 
-
                 <td>
-
 
                 </td>
             </tr>

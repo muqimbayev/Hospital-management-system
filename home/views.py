@@ -4,14 +4,13 @@ from .models import Admin
 from datetime import datetime
 from django.views import View
 from django.http import HttpRequest
-from .forms import UserProfileForm
 from .models import Doctor, Admissions, Financial
 from django.http import HttpResponse
 from django.contrib.auth.hashers import check_password
+from django.contrib.auth import logout
 
 class HomePages(TemplateView):
     template_name = 'home.html'
-
 
 def Admin_login(request):
     if request.method == 'POST':
@@ -30,23 +29,19 @@ def Admin_login(request):
 class Admin_panel(TemplateView):
     template_name = 'Adm/main.html'
 
-
 def get(request):
     doctors = Doctor.objects.all()
     context = {'doctors': doctors}
     return render(request, 'Adm/signupUser.html', context)
 
-
 class Signup(View):
     def get(self, request):
-        form = UserProfileForm()
         doctors = Doctor.objects.all()
-        context = {'form': form, 'doctors': doctors}
+        context = {'doctors': doctors}
         return render(request, 'Adm/signupUser.html', context)
 
     def post(self, request):
         if request.method == 'POST':
-            # form = UserProfileForm(request.POST)
             doctor_info = request.POST['doctor']
             doctor_parts = doctor_info.split(', ')
             doctor_id = doctor_parts[0]
@@ -110,10 +105,14 @@ class Payment(View):
         payment_info.save()
         return redirect('signupUser')
 
-
 class About_doctor(View):
     def get(self, request):
         doctors = Doctor.objects.all()
         context = {'doctors': doctors}
         return render(request, 'Adm/about_doctor.html', context)
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')
+
 

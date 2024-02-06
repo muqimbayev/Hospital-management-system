@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import HomePages, Admin_login, Admin_panel, Signup, About_doctor, Payment
-from doctor.views import Accountant
+from .views import HomePages, Admin_login, Admin_panel, Signup, About_doctor, Payment, logout_view
 
 urlpatterns = [
     path('', HomePages.as_view(), name='home'),
@@ -9,5 +8,5 @@ urlpatterns = [
     path('signupUser/', Signup.as_view(), name='signupUser'),
     path('about_doctor/', About_doctor.as_view(), name='about_doctor'),
     path('payment/', Payment.as_view(), name='payment'),
-    path('accoutant/', Accountant, name='accoutant'),
+    path('logout/', logout_view, name='logout'),
 ]

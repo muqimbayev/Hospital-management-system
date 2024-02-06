@@ -41,7 +41,7 @@ class Doctor(models.Model):
     specialty = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=50)
     date_birth = models.DateField()
-    password = models.CharField(max_length=128)  # Parolni hashlab saqlash uchun xotira
+    password = models.CharField(max_length=128)
     price = models.IntegerField()
     gender = models.CharField(max_length=30)
 
@@ -76,8 +76,6 @@ class History(models.Model):
     doctor_id = models.IntegerField()
     appeal = models.TextField()
     diagnosis = models.TextField()
-
-
 
 
 class Financial(models.Model):

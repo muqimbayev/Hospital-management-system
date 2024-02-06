@@ -12,7 +12,6 @@ def LoginDoctor(request):
         phone_number1 = request.POST.get('phone_number1')
         request.session['phone_number1'] = phone_number1
         password = request.POST.get('password1')
-
         try:
             doctor = Doctor.objects.get(phone_number=phone_number1)
             if check_password(password, doctor.password):

@@ -9,6 +9,9 @@
 <body>
 <form method="post" action="{% url 'doctor_submit' %}">
     {% csrf_token %}
+    <a href="{% url 'logout' %}" style="float: right;">
+    <button class="btn btn-primary" type="submit">Logout</button>
+</a>
     <div class="container">
         <div class="row mt-6">
             <div class="col-md-6 offset-md-3">

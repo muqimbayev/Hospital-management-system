@@ -80,6 +80,13 @@
 </head>
 <body>
 {% block content %}
+    {% csrf_token %}
+
+<a href="{% url 'logout' %}" style="float: right;">
+    <button class="btn btn-primary" type="submit">Logout</button>
+</a>
+
+
     <div class="loginBox">
         <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
         <h3>Ro'yxatdan o'tkazish</h3>
@@ -106,6 +113,7 @@
                 <option value="{{ doctor.id }}, {{doctor}}"> </option>
             {% endfor %}
         </datalist>
+
 
             <a href="payment">
         <button class="btn btn-primary" type="submit">Login</button>
