@@ -56,7 +56,7 @@ class Doctor(models.Model):
 
 class Admissions(models.Model):
     id = models.BigAutoField(primary_key=True)
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=20)
     full_name = models.CharField(max_length=100)
     date_birth = models.CharField(max_length=100)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
@@ -71,7 +71,7 @@ class Admissions(models.Model):
 class History(models.Model):
     id = models.BigAutoField(primary_key=True)
     user_id = models.IntegerField()
-    user_phone_number = models.CharField(max_length=15)
+    user_phone_number = models.CharField(max_length=20)
     date = models.DateTimeField(auto_now_add=True)
     doctor_id = models.IntegerField()
     appeal = models.TextField()
@@ -82,7 +82,7 @@ class Financial(models.Model):
     id = models.BigAutoField(primary_key=True)
     check_number = models.BigIntegerField(unique=True)
     user_full_name = models.CharField(max_length=50)
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=20)
     doctor_id = models.IntegerField()
     date = models.DateTimeField(auto_now_add=True)
     price = models.BigIntegerField()
