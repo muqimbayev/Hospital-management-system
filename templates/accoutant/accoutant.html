@@ -10,16 +10,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-
-<body>
-
-<form method="post" action="{% url 'accoutant' %}">
-        {% csrf_token %}
-    </br>
-
-    <a href="{% url 'logout' %}" style="float: right;">
+<a href="{% url 'logout' %}" style="float: right;">
     <button class="btn btn-primary" type="submit">Logout</button>
 </a>
+<body>
+<form method="post" action="{% url 'accoutant' %}">
+    {% csrf_token %}
+
 
     </br>
 
@@ -69,3 +66,5 @@
 </form>
 </body>
 </html>
+
+

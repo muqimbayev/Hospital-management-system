@@ -66,7 +66,6 @@ class Signup(View):
 
 
 class Payment(View):
-
     def get(self, request):
         from datetime import datetime
         hozirgi_vaqt = datetime.now()

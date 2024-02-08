@@ -50,3 +50,5 @@ def Financial_info(request):
             continue
     summa = Financial.objects.aggregate(Sum('price'))
     return render(request, 'accoutant/accoutant.html', {'financial_list': context_list, 'summa': summa['price__sum']})
+
+

@@ -100,3 +100,5 @@ def Accountant(request):
         })
 
     return render(request, 'accoutant.html', {'financial_list': context_list})
+
+
